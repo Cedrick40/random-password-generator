@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Password Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>Random Password Generator</h1>
+      <p>Choose a length and the character types, then generate.</p>
+    </header>
+
+    <section class="output" aria-label="Generated password">
+      <output id="password" class="password" aria-live="polite">Click Generate</output>
+      <button type="button" class="copy" id="copy">Copy</button>
+    </section>
+
+    <div class="strength" aria-hidden="true"><span id="strength-bar"></span></div>
+    <p class="strength-text" id="strength-text"></p>
+
+    <form id="options" novalidate>
+      <div class="length">
+        <label for="length">Password length: <strong id="length-value">16</strong></label>
+        <input id="length" type="range" min="4" max="64" value="16">
+      </div>
+
+      <fieldset>
+        <legend>Include</legend>
+        <label class="check"><input type="checkbox" id="uppercase" checked> Uppercase letters (A-Z)</label>
+        <label class="check"><input type="checkbox" id="lowercase" checked> Lowercase letters (a-z)</label>
+        <label class="check"><input type="checkbox" id="numbers" checked> Numbers (0-9)</label>
+        <label class="check"><input type="checkbox" id="symbols" checked> Symbols (!@#$%...)</label>
+      </fieldset>
+
+      <button type="submit" class="generate">Generate password</button>
+    </form>
+
+    <p class="note" id="note" role="status"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
